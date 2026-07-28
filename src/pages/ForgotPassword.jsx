@@ -1,0 +1,151 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+import ForgotpasswordForm from "../components/ForgotpasswordForm";
+import ForgotpasswordSection from "../components/ForgotpasswordSection";
+
+const ForgotPassword = () => {
+
+  const [showForm, setShowForm] = useState(false);
+
+  return (
+    <div className="min-h-screen">
+
+
+      {/* ================= Desktop View ================= */}
+      <div className="hidden md:flex min-h-screen w-full">
+
+        {/* Left Side */}
+        <div className="w-1/2 bg-white overflow-y-auto">
+          <ForgotpasswordForm />
+        </div>
+
+
+        {/* Right Side */}
+        <div className="
+          relative 
+          w-1/2
+          bg-[radial-gradient(circle_at_center,#8B5CF6_0%,#6D5BEF_35%,#5547E8_65%,#3A35CC_100%)]
+        ">
+          <ForgotpasswordSection />
+        </div>
+
+      </div>
+
+
+
+      {/* ================= Mobile View ================= */}
+      <div className="
+        md:hidden 
+        relative 
+        min-h-screen
+        bg-[radial-gradient(circle_at_center,#8B5CF6_0%,#6D5BEF_35%,#5547E8_65%,#3A35CC_100%)]
+      ">
+
+
+        {/* Welcome Section */}
+        <ForgotpasswordSection />
+
+
+
+        {/* Menu Button */}
+        <button
+          onClick={() => setShowForm(true)}
+          className="
+            absolute 
+            top-6 
+            left-6 
+            text-white 
+            z-50
+          "
+        >
+          <Menu size={34} />
+        </button>
+
+
+
+        {/* Overlay */}
+        <div
+          onClick={() => setShowForm(false)}
+          className={`
+            fixed 
+            inset-0 
+            bg-black/40
+            transition-opacity
+            duration-300
+            z-40
+            ${
+              showForm
+              ? "opacity-100 visible"
+              : "opacity-0 invisible"
+            }
+          `}
+        />
+
+
+
+        {/* Sliding Forgot Password Form */}
+        <div
+          className={`
+            fixed 
+            top-0 
+            left-0
+            h-full
+            w-full
+            sm:w-[90%]
+            bg-white
+            shadow-2xl
+            transition-transform
+            duration-300
+            z-50
+            ${
+              showForm
+              ? "translate-x-0"
+              : "-translate-x-full"
+            }
+          `}
+        >
+
+
+          {/* Close Button */}
+          <div className="
+            sticky
+            top-0
+            flex
+            justify-end
+            p-5
+            bg-white
+            z-20
+          ">
+
+            <button
+              onClick={() => setShowForm(false)}
+              className="text-black"
+            >
+              <X size={28}/>
+            </button>
+
+          </div>
+
+
+
+          {/* Scrollable Form */}
+          <div className="
+            h-[calc(100vh-72px)]
+            overflow-y-auto
+          ">
+            <ForgotpasswordForm />
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+  );
+};
+
+export default ForgotPassword;
