@@ -47,12 +47,13 @@ const Signup = () => {
 
         {/* Sliding Form */}
         <div
-          className={`fixed top-0 left-0 h-full w-full sm:w-[90%] bg-white shadow-2xl transition-transform duration-300 z-50 ${
-            showForm ? "translate-x-0" : "-translate-x-full"
-          }`}
+  className={`fixed top-0 left-0 h-full w-full sm:w-[90%] bg-black  text-white shadow-2xl transition-transform duration-300 z-50 ${
+    showForm ? "translate-x-0" : "-translate-x-full"
+  }`}
+
         >
           {/* Sticky Header */}
-          <div className="sticky top-0 flex justify-end p-5 bg-white z-20">
+          <div className="sticky top-0 flex justify-end p-5  z-20">
             <button onClick={() => setShowForm(false)}>
               <X size={28} />
             </button>

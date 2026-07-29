@@ -25,8 +25,8 @@ const SignupForm = () => {
             Chat <span className="text-purple-500">App</span>
           </h1>
 
-          <p className="text-gray-500 text-sm">
-            Connect. Chat. Share.
+          <p className="text-white md:text-gray-500 text-sm">
+             Connect. Chat. Share.
           </p>
         </div>
       </div>
