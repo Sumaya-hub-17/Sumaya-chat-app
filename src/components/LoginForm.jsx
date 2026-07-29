@@ -73,13 +73,6 @@ const LoginForm = () => {
        </div>
 
       </div>
-
-
-      {/* <div className="mt-8">
-        <SignupButton />
-      </div> */}
-
-     
         <div className="mt-10">
         <button className="w-full
         flex items-center justify-center gap-3
