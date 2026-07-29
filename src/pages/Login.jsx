@@ -24,6 +24,7 @@ const Login = () => {
 
       </div>
 
+
       {/* ================= Mobile Only ================= */}
       <div className="relative min-h-screen md:hidden overflow-hidden bg-[radial-gradient(circle_at_center,#8B5CF6_0%,#6D5BEF_35%,#5547E8_65%,#3A35CC_100%)]">
 
@@ -35,8 +36,10 @@ const Login = () => {
           <Menu size={36} />
         </button>
 
+
         {/* Welcome Section */}
         <WelcomeSection />
+
 
         {/* Overlay */}
         {showForm && (
@@ -46,23 +49,27 @@ const Login = () => {
           />
         )}
 
+
         {/* Slide Login Form */}
         <div
-          className={`fixed top-0 left-0 h-full w-full bg-white z-50 transform transition-transform duration-300 ${
+          className={`fixed top-0 left-0 h-full w-full bg-black text-white z-50 transform transition-transform duration-300 ${
             showForm ? "translate-x-0" : "-translate-x-full"
           }`}
         >
+
           {/* Close Button */}
           <button
             onClick={() => setShowForm(false)}
-            className="absolute top-5 right-5"
+            className="absolute top-5 right-5 text-white"
           >
             <X size={30} />
           </button>
 
+
           <div className="pt-16 h-full overflow-y-auto">
             <LoginForm />
           </div>
+
         </div>
 
       </div>

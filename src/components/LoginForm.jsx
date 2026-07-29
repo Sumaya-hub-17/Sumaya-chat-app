@@ -1,5 +1,5 @@
 import logo from "../assets/images/chat-img-1.png";
-import { User, Mail, AtSign, Lock } from "lucide-react";
+import { UserPlus, Mail, AtSign, Lock } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
@@ -74,11 +74,26 @@ const LoginForm = () => {
 
       </div>
 
-      {/* Signup Button */}
-      <div className="mt-8">
-        <SignupButton />
-      </div>
 
+      {/* <div className="mt-8">
+        <SignupButton />
+      </div> */}
+
+     
+        <div className="mt-10">
+        <button className="w-full
+        flex items-center justify-center gap-3
+        py-4
+        rounded-xl
+        bg-linear-to-r from-indigo-600 to-purple-600
+        text-white text-lg md:text-xl font-semibold
+        hover:scale-[1.02]
+        transition-all duration-300
+        shadow-lg"> 
+        <UserPlus size={22} />
+        <span>Login</span>
+        </button>
+      </div>
       {/* Divider */}
       <div className="flex items-center gap-3 my-8">
         <div className="flex-1 h-px bg-gray-300"></div>
@@ -112,7 +127,7 @@ const LoginForm = () => {
         </span>
 
        <Link 
-       to="/"
+       to="/Signup"
        className="ml-2 font-semibold bg-linear-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
        >
         Signup

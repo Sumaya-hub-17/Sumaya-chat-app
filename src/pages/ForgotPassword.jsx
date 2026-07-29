@@ -47,7 +47,6 @@ const ForgotPassword = () => {
         <ForgotpasswordSection />
 
 
-
         {/* Menu Button */}
         <button
           onClick={() => setShowForm(true)}
@@ -93,7 +92,8 @@ const ForgotPassword = () => {
             h-full
             w-full
             sm:w-[90%]
-            bg-white
+            bg-black
+            text-white
             shadow-2xl
             transition-transform
             duration-300
@@ -114,13 +114,13 @@ const ForgotPassword = () => {
             flex
             justify-end
             p-5
-            bg-white
+            bg-black
             z-20
           ">
 
             <button
               onClick={() => setShowForm(false)}
-              className="text-black"
+              className="text-white"
             >
               <X size={28}/>
             </button>
