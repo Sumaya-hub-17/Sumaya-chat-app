@@ -4,14 +4,19 @@ import {
   Users,
   Settings,
   ChevronDown,
+  Moon,
+  Sun,
 } from "lucide-react";
+
+import { useState } from "react";
 
 import Logo from "../assets/images/chat-img-1.png";
 import UserImg from "../assets/images/chat-img-8.webp";
 
 const DesktopSidebar = ({ activePage, setActivePage }) => {
+  
   return (
-    <aside className="hidden lg:flex w-28 min-h-screen bg-[#16152D] text-white flex-col justify-between py-6">
+    <aside className="hidden lg:flex w-44 min-h-screen bg-[#16152D] text-white flex-col justify-between py-6">
 
       {/* Top */}
       <div>
@@ -93,34 +98,38 @@ const DesktopSidebar = ({ activePage, setActivePage }) => {
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="flex flex-col items-center">
+         {/* Bottom */}
+<div className="px-3 pb-4">
+
+  {/* Profile Card */}
+  <div className="bg-[#1E1B3A] border border-white/10 rounded-2xl p-4">
+
+    <div className="flex items-center justify-between">
+
+      <div className="flex items-center gap-3">
 
         <div className="relative">
-
           <img
             src={UserImg}
             alt="user"
-            className=" mt-20 w-14 h-14 rounded-full object-cover border-2 border-white"
+            className="w-12 h-12 rounded-full object-cover"
           />
 
-          <span className="absolute bottom-1 right-0 w-4 h-4 rounded-full bg-green-500 border-2 border-[#16152D]"></span>
-
+          <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-green-500 border-2 border-[#1E1B3A]"></span>
         </div>
 
-        <h3 className="mt-4 text-sm font-semibold">
-          Sumaya
-        </h3>
-
-        <p className="text-xs text-gray-300">
-          Online
-        </p>
-
-        <button className="mt-4">
-          <ChevronDown size={20} />
-        </button>
+        <div>
+          <h3 className="text-sm font-semibold">Sumaya</h3>
+          <p className="text-xs text-green-400">Online</p>
+        </div>
 
       </div>
+
+      <ChevronDown size={18} className="text-gray-400" />
+
+    </div>
+  </div>
+</div>
 
     </aside>
   );

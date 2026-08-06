@@ -16,6 +16,7 @@ onClick={() => setShowDetails(false)}
   className="
     flex-1
     py-3 lg:py-5
+    cursor-pointer
     rounded-2xl
     bg-linear-to-r
     from-[#7C3AED]
@@ -38,6 +39,7 @@ onClick={() => setShowDetails(false)}
     flex
     items-center
     justify-center
+    cursor-pointer
     gap-2 lg:gap-3
     py-3 lg:py-5
     rounded-2xl

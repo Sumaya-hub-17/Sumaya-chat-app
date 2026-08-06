@@ -3,38 +3,48 @@ import { Menu, X } from "lucide-react";
 import SignupForm from "../components/SignupForm";
 import WelcomeSection from "../components/WelcomeSection";
 
-const Signup = () => {
+const Signup = ({ darkMode }) => {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <div className="min-h-screen md:flex">
+    <div
+      className={`min-h-screen md:flex ${
+        darkMode ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
       {/* ================= Desktop View ================= */}
       <div className="hidden md:flex w-full">
+
         {/* Left Side */}
-        <div className="w-1/2 bg-white overflow-y-auto">
+        <div
+          className={`w-1/2 overflow-y-auto ${
+            darkMode ? "bg-black" : "bg-white"
+          }`}
+        >
           <SignupForm />
         </div>
 
         {/* Right Side */}
-        <div className="relative w-1/2  bg-[radial-gradient(circle_at_center,#8B5CF6_0%,#6D5BEF_35%,#5547E8_65%,#3A35CC_100%)]">
+        <div className="relative w-1/2 bg-[radial-gradient(circle_at_center,#8B5CF6_0%,#6D5BEF_35%,#5547E8_65%,#3A35CC_100%)]">
           <WelcomeSection />
         </div>
       </div>
 
       {/* ================= Mobile View ================= */}
-    <div className="md:hidden relative min-h-screen">
-        {/* Blue Background */}
-       <div className="relative min-h-screen bg-[radial-gradient(circle_at_center,#8B5CF6_0%,#6D5BEF_35%,#5547E8_65%,#3A35CC_100%)]">
-          {/* Welcome Section */}
+      <div className="md:hidden relative min-h-screen">
+
+        {/* Background */}
+        <div className="relative min-h-screen bg-[radial-gradient(circle_at_center,#8B5CF6_0%,#6D5BEF_35%,#5547E8_65%,#3A35CC_100%)]">
+
           <WelcomeSection />
 
-          {/* Menu Button */}
           <button
             onClick={() => setShowForm(true)}
             className="absolute top-6 left-6 text-white z-50"
           >
             <Menu size={34} />
           </button>
+
         </div>
 
         {/* Overlay */}
@@ -47,13 +57,14 @@ const Signup = () => {
 
         {/* Sliding Form */}
         <div
-  className={`fixed top-0 left-0 h-full w-full sm:w-[90%] bg-black  text-white shadow-2xl transition-transform duration-300 z-50 ${
-    showForm ? "translate-x-0" : "-translate-x-full"
-  }`}
-
+          className={`fixed top-0 left-0 h-full w-full sm:w-[90%] shadow-2xl transition-transform duration-300 z-50 ${
+            showForm ? "translate-x-0" : "-translate-x-full"
+          } ${
+            darkMode ? "bg-black text-white" : "bg-white text-black"
+          }`}
         >
           {/* Sticky Header */}
-          <div className="sticky top-0 flex justify-end p-5  z-20">
+          <div className="sticky top-0 flex justify-end p-5 z-20">
             <button onClick={() => setShowForm(false)}>
               <X size={28} />
             </button>
@@ -64,6 +75,7 @@ const Signup = () => {
             <SignupForm />
           </div>
         </div>
+
       </div>
     </div>
   );

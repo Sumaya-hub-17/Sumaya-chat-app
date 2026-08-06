@@ -13,7 +13,7 @@ const CallDetails = ({setShowDetails}) => {
       {/* Header */}
       <div className="flex items-center justify-between">
        <button onClick={() => setShowDetails(false)}>
-          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 cursor-pointer" />
         </button>
         <div className="flex items-center gap-4">
           <button>

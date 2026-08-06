@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+/* Default = Desktop */
+.aurora {
+  background: transparent;
+}
+
+/* Sirf Mobile */
+@media (max-width: 767px) {
+  .aurora {
+    background: linear-gradient(
+      130deg,
+      #5B21B6,
+      #2563EB,
+      #7C3AED,
+      #1D4ED8,
+      #5B21B6
+    );
+
+    background-size: 400% 400%;
+    animation: auroraMove 2s ease infinite;
+  }
+}
+
+@keyframes auroraMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.aurora-card {
+  background: transparent;
+}
+
+@media (max-width: 767px) {
+  .aurora-card {
+    background: linear-gradient(
+      130deg,
+      #5B21B6,
+      #2563EB,
+      #7C3AED,
+      #1D4ED8,
+      #5B21B6
+    );
+
+    background-size: 400% 400%;
+    animation: auroraMove 5s ease infinite;
+
+    box-shadow:
+      0 0 15px rgba(124, 58, 237, 0.35),
+      0 0 25px rgba(37, 99, 235, 0.25);
+  }
+}

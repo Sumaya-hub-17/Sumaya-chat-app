@@ -120,7 +120,7 @@ const Home = () => {
         {
           activePage === "welcome" && (
 
-            <div className="w-[400px] bg-white border-r border-gray-200">
+            <div className="w-100 bg-white border-r border-gray-200">
 
 
               <ChatSidebarHeader />
