@@ -68,7 +68,7 @@ const Onboarding = ({ darkMode }) => {
           cursor-pointer
           text-xl
           text-white
-          bg-gradient-to-r
+          bg-linear-to-r
           from-[#6D3BFF]
           to-[#4B2BD6]
         "
