@@ -1,4 +1,4 @@
-import people from "../data/people";
+import people from "../Data/people";
 import { MessageCircle, Phone, MoreVertical } from "lucide-react";
 
 const PeopleList = () => {
