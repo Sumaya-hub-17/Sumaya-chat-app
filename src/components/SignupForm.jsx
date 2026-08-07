@@ -10,26 +10,19 @@ import { Link } from "react-router-dom";
 
 const SignupForm = () => {
   return (
-    <div className="p-6 sm:p-8 md:p-10">
+    <div className="bg-black text-white min-h-screen p-6 md:bg-white md:text-black">
 
       {/* Logo */}
-      <div className="flex items-center gap-3">
-        <img
-          src={logo}
-          alt="logo"
-          className="w-12 h-12 md:w-16 md:h-16 object-contain"
-        />
+      <div>
+        <h1 className="text-2xl md:text-3xl font-bold">
+          Chat <span className="text-purple-500">App</span>
+        </h1>
 
-        <div>
-          <h1 className="text-2xl md:text-3xl font-bold">
-            Chat <span className="text-purple-500">App</span>
-          </h1>
-
-          <p className="text-white md:text-gray-500 text-sm">
-             Connect. Chat. Share.
-          </p>
-        </div>
+        <p className="text-gray-300 md:text-gray-500 text-sm">
+          Connect. Chat. Share.
+        </p>
       </div>
+
 
       {/* Heading */}
       <div className="mt-10">
@@ -37,10 +30,11 @@ const SignupForm = () => {
           Create your account
         </h1>
 
-        <p className="text-gray-500 mt-2">
+        <p className="text-gray-300 md:text-gray-500 mt-2">
           Sign up to get started with ChatApp.
         </p>
       </div>
+
 
       {/* Inputs */}
       <div className="mt-8 space-y-2">
@@ -87,21 +81,26 @@ const SignupForm = () => {
 
       </div>
 
+
       {/* Signup Button */}
       <div className="mt-8">
         <SignupButton />
       </div>
 
+
       {/* Divider */}
       <div className="flex items-center gap-3 my-8">
-        <div className="flex-1 h-px bg-gray-300"></div>
 
-        <p className="text-gray-500 text-sm whitespace-nowrap">
+        <div className="flex-1 h-px bg-gray-600 md:bg-gray-300"></div>
+
+        <p className="text-gray-300 md:text-gray-500 text-sm whitespace-nowrap">
           or sign up with
         </p>
 
-        <div className="flex-1 h-px bg-gray-300"></div>
+        <div className="flex-1 h-px bg-gray-600 md:bg-gray-300"></div>
+
       </div>
+
 
       {/* Social Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -118,22 +117,23 @@ const SignupForm = () => {
 
       </div>
 
+
       {/* Login */}
       <div className="text-center mt-8">
-        <span className="text-gray-500">
+
+        <span className="text-gray-300 md:text-gray-500">
           Already have an account?
         </span>
 
-          <Link
+        <Link
           to="/login"
           className="ml-2 font-semibold bg-linear-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
-          >
-            Login
-          </Link>
-
-
+        >
+          Login
+        </Link>
 
       </div>
+
 
     </div>
   );

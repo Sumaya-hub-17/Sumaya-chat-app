@@ -7,11 +7,6 @@ const TopBar = () =>{
   return(
     <>
     <header className="flex items-center justify-between px-5 py-4 md:hidden">
-      {/* Left */}
-
-      <button>
-        <Menu className="w-6 h-6"/>
-      </button>
 
       {/* center */}
 

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Signup from "./pages/Signup";
@@ -10,67 +9,88 @@ import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 import Calls from "./pages/Calls";
 import People from "./pages/People";
+import Settings from "./pages/Settings";
+
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
 
   return (
+
     <BrowserRouter>
+
       <Routes>
+
 
         <Route
           path="/"
-          element={<Splash darkMode={darkMode} />}
+          element={<Splash />}
         />
+
 
         <Route
           path="/Onboarding"
-          element={<Onboarding darkMode={darkMode} />}
+          element={<Onboarding />}
         />
+
 
         <Route
           path="/Signup"
-          element={<Signup darkMode={darkMode} />}
+          element={<Signup />}
         />
+
 
         <Route
           path="/login"
-          element={<Login darkMode={darkMode} />}
+          element={<Login />}
         />
+
 
         <Route
           path="/forgot-password"
-          element={<ForgotPassword darkMode={darkMode} />}
+          element={<ForgotPassword />}
         />
+
+
+
+        {/* Main Pages */}
 
         <Route
           path="/home"
-          element={
-            <Home
-              darkMode={darkMode}
-              setDarkMode={setDarkMode}
-            />
-          }
+          element={<Home />}
         />
+
 
         <Route
           path="/chat/:id"
-          element={<Chat darkMode={darkMode} />}
+          element={<Chat />}
         />
+
 
         <Route
           path="/calls"
-          element={<Calls darkMode={darkMode} />}
+          element={<Calls />}
         />
+
 
         <Route
           path="/People"
-          element={<People darkMode={darkMode} />}
+          element={<People />}
         />
 
+
+        <Route
+          path="/settings"
+          element={<Settings />}
+        />
+
+
       </Routes>
+
+
     </BrowserRouter>
+
   );
 }
+
 
 export default App;

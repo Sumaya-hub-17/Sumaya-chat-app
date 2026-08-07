@@ -12,7 +12,7 @@ const Chat = ({ chat, setSelectedChat }) => {
           <ArrowLeft
             size={20}
             onClick={() => setSelectedChat(null)}
-            className="cursor-pointer lg:hidden text-black"
+            className="cursor-pointer lg:hidden text-white lg:text-black"
           />
 
           <img
@@ -37,12 +37,12 @@ const Chat = ({ chat, setSelectedChat }) => {
 
           <Phone
             size={22}
-            className="cursor-pointer text-black"
+           className="cursor-pointer text-white lg:text-black"
           />
 
           <Video
             size={22}
-            className="cursor-pointer text-black"
+           className="cursor-pointer text-white lg:text-black"
           />
 
         </div>

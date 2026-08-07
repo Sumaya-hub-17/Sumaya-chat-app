@@ -11,6 +11,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 
 const menuItems = [
   {
@@ -57,17 +59,21 @@ const menuItems = [
 
 
 const SettingsMenu = ({ selected, setSelected }) => {
-
+      
+  const navigate = useNavigate();
   return (
-    <div
-      className="
-      w-full lg:w-[360px]
-      bg-white
-      border border-gray-200
-      rounded-2xl
-      p-3
-      "
-    >
+   <div
+  className="
+  w-full
+  lg:w-95
+  bg-[#111216]
+  lg:bg-white
+  border border-gray-800
+  lg:border-gray-200
+  rounded-2xl
+  p-4
+  "
+>
 
 
       {/* Menu Items */}
@@ -83,17 +89,19 @@ const SettingsMenu = ({ selected, setSelected }) => {
             key={index}
             onClick={() => setSelected(item.title)}
             className={`
-            flex items-center justify-between
-            p-4 rounded-xl
-            cursor-pointer
-            mb-2
-            group
-            ${
-              isActive
-              ? "bg-black"
-              : "hover:bg-black"
-            }
-            `}
+             flex items-center justify-between
+             p-4 rounded-xl
+             cursor-pointer
+             mb-2
+             group
+             transition-all
+             duration-300
+             ${
+               isActive
+                 ? "bg-white lg:bg-black"
+                 : "hover:bg-white lg:hover:bg-black"
+             }
+             `}
           >
 
 
@@ -105,8 +113,8 @@ const SettingsMenu = ({ selected, setSelected }) => {
                 className={`
                 ${
                   isActive
-                  ? "text-purple-400"
-                  : "text-gray-600 group-hover:text-white"
+                    ? "text-purple-500"
+                    : "text-gray-400 lg:text-gray-600 group-hover:text-black lg:group-hover:text-white"
                 }
                 `}
               />
@@ -121,8 +129,8 @@ const SettingsMenu = ({ selected, setSelected }) => {
                   font-medium
                   ${
                     isActive
-                    ? "text-white"
-                    : "text-black group-hover:text-white"
+                      ? "text-black lg:text-white"
+                      : "text-white lg:text-black group-hover:text-black lg:group-hover:text-white"
                   }
                   `}
                 >
@@ -136,8 +144,8 @@ const SettingsMenu = ({ selected, setSelected }) => {
                   text-sm
                   ${
                     isActive
-                    ? "text-gray-300"
-                    : "text-gray-500 group-hover:text-gray-300"
+                     ? "text-gray-600 lg:text-gray-300"
+                     : "text-gray-400 lg:text-gray-500 group-hover:text-gray-600 lg:group-hover:text-gray-300"
                   }
                   `}
                 >
@@ -156,9 +164,9 @@ const SettingsMenu = ({ selected, setSelected }) => {
               size={20}
               className={`
               ${
-                isActive
-                ? "text-white"
-                : "text-gray-500 group-hover:text-white"
+               isActive
+                    ? "text-black lg:text-white"
+                    : "text-gray-400 lg:text-gray-500 group-hover:text-black lg:group-hover:text-white"
               }
               `}
             />
@@ -173,17 +181,21 @@ const SettingsMenu = ({ selected, setSelected }) => {
 
       {/* Logout */}
       <div
-        className="
-        border-t border-gray-200
-        mt-4 pt-4
-        flex items-center gap-4
-        p-4
-        cursor-pointer
-        group
-        hover:bg-black
-        rounded-xl
-        "
-      >
+          onClick={() => {
+            localStorage.clear();
+            navigate("/Signup");
+          }}
+          className="
+          border-t border-gray-700 lg:border-gray-200
+          mt-4 pt-4
+          flex items-center gap-4
+          p-4
+          cursor-pointer
+          group
+          hover:bg-black
+          rounded-xl
+          "
+        >
 
         <LogOut
           size={24}

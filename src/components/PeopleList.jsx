@@ -7,7 +7,7 @@ const PeopleList = () => {
 
       {/* Heading */}
       <div className="flex items-center justify-between">
-        <h2 className="text-xl md:text-2xl font-bold">
+      <h2 className="text-xl md:text-2xl font-bold text-white md:text-black">
           All People
         </h2>
 

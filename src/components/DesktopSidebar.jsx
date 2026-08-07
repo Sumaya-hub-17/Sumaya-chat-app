@@ -25,7 +25,7 @@ const DesktopSidebar = ({ activePage, setActivePage }) => {
         <div className="flex justify-center mb-10">
           <div
             className="w-16 h-16 rounded-3xl
-            bg-gradient-to-br from-[#6C63FF] to-[#5B4CF6]
+            bg-linear-to-br from-[#6C63FF] to-[#5B4CF6]
             flex items-center justify-center shadow-lg"
           >
             <img

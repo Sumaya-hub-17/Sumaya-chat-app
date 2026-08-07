@@ -2,6 +2,15 @@ import SettingsMenu from "../components/Settings/SettingsMenu";
 import profile from "../assets/images/chat-img-8.webp";
 import { Pencil } from "lucide-react";
 import { useState } from "react";
+import AccountInfo from "../components/Settings/AccountInfo";
+import Preferences from "../components/Settings/Preferences";
+import Notifications from "../components/Settings/Notifications";
+import PrivacySecurity from "../components/Settings/PrivicySecurity";
+import Appearance from "../components/Settings/Appearance";
+import ChatSettings from "../components/Settings/ChatSettings";
+import DataStorage from "../components/Settings/DataStorage";
+import HelpSupport from "../components/Settings/HelpSupport";
+import About from "../components/Settings/About";
 
 const Settings = () => {
 
@@ -20,7 +29,7 @@ const Settings = () => {
       "
     >
 
-      <h1 className="text-3xl font-bold mb-8">
+     <h1 className="text-3xl font-bold mb-8 text-white lg:text-black">
         Settings
       </h1>
 
@@ -45,16 +54,18 @@ const Settings = () => {
 
         {/* Right Content */}
         <div
-          className="
-          flex-1
-          bg-[#111216]
-          border border-gray-800
-          rounded-2xl
-          p-6
-          lg:bg-gray-100
-          lg:border-gray-200
-          "
-        >
+            className="
+            flex-1
+            bg-[#111216]
+            text-white
+            border border-gray-800
+            rounded-2xl
+            p-6
+            lg:bg-white
+            lg:text-black
+            lg:border-gray-200
+            "
+          >
 
 
           {/* My Account */}
@@ -63,7 +74,7 @@ const Settings = () => {
 
               <>
 
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-2xl font-semibold text-white lg:text-black">
                   My Account
                 </h2>
 
@@ -92,6 +103,7 @@ const Settings = () => {
 
                     <img
                       src={profile}
+                      alt="Emma Watson"
                       className="
                       w-20
                       h-20
@@ -103,7 +115,7 @@ const Settings = () => {
 
                     <div>
 
-                      <h3 className="text-xl font-semibold">
+                      <h3 className="text-xl font-semibold text-white lg:text-black">
                         Emma Watson
                       </h3>
 
@@ -125,15 +137,17 @@ const Settings = () => {
 
                   <button
                     className="
-                    flex
-                    items-center
-                    gap-2
-                    bg-black
-                    text-white
-                    px-4
-                    py-2
-                    rounded-xl
-                    "
+                      items-center
+                      gap-2
+                      bg-white
+                      text-black
+                      px-4
+                      py-2
+                      rounded-xl
+                      lg:bg-black
+                      lg:text-white
+                      hidden md:flex
+                     "
                   >
 
                     <Pencil size={18}/>
@@ -141,8 +155,9 @@ const Settings = () => {
 
                   </button>
 
-
                 </div>
+                    <AccountInfo />
+                    <Preferences />
 
               </>
             )
@@ -152,47 +167,64 @@ const Settings = () => {
 
 
           {/* Notifications */}
-          {
-            selected === "Notifications" && (
+                     {
+                    selected === "Notifications" && (
+                      <Notifications />
+                    )
+                  }
 
-              <div>
-
-                <h2 className="text-2xl font-semibold">
-                  Notifications
-                </h2>
-
-                <p className="text-gray-400 mt-2">
-                  Manage your notifications
-                </p>
-
-              </div>
-
-            )
-          }
 
 
 
 
           {/* Privacy */}
-          {
-            selected === "Privacy & Security" && (
+          
+                              {
+                  selected === "Privacy & Security" && (
+                    <PrivacySecurity />
+                  )
+                }
+           
 
-              <div>
+           {/* apprence */}
+           {
+             selected === "Appearance" && (
+               <Appearance />
+             )
+           }
 
-                <h2 className="text-2xl font-semibold">
-                  Privacy & Security
-                </h2>
+           {/* Chat setting */}
 
-                <p className="text-gray-400 mt-2">
-                  Control your privacy settings
-                </p>
+           {
+             selected === "Chat Settings" && (
+               <ChatSettings />
+             )
+           }
+              
 
-              </div>
+              {/* Data storage */}
 
-            )
-          }
+              {
+                selected === "Data & Storage" && (
+                  <DataStorage />
+                )
+              }
 
+              {/* Help & support */}
 
+              {
+                selected === "Help & Support" && (
+                  <HelpSupport />
+                )
+              }
+
+              {/* About */}
+
+              {
+                selected === "About" && (
+                  <About />
+                )
+              }
 
         </div>
 

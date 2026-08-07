@@ -63,12 +63,15 @@ const Signup = ({ darkMode }) => {
             darkMode ? "bg-black text-white" : "bg-white text-black"
           }`}
         >
-          {/* Sticky Header */}
-          <div className="sticky top-0 flex justify-end p-5 z-20">
-            <button onClick={() => setShowForm(false)}>
-              <X size={28} />
-            </button>
-          </div>
+         {/* Sticky Header */}
+<div className="sticky top-0 flex justify-end p-5 z-20 bg-black md:bg-white">
+  <button
+    onClick={() => setShowForm(false)}
+    className="text-white md:text-black"
+  >
+    <X size={28} />
+  </button>
+</div>
 
           {/* Scrollable Form */}
           <div className="h-[calc(100vh-72px)] overflow-y-auto">
