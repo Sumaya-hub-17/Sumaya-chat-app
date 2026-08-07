@@ -2,7 +2,7 @@ import TopBar from "../components/TopBar";
 import SearchBar from "../components/SearchBar";
 import PinnedSection from "../components/PinnedSection";
 import RecentChats from "../components/RecentChats";
-import BottomNavigation from "../components/BottomNavigation";
+import BottomNavigation from "../components/bottomNavigation";
 import DesktopSidebar from "../components/DesktopSidebar";
 import ChatSidebarHeader from "../components/ChatSidebarHeader";
 import WelcomeScreen from "../components/WelcomeScreen";
